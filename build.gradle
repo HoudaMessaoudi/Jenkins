@@ -58,6 +58,7 @@ publishing {
     }
 }
 /*slack {
+
     webhookUrl 'https://hooks.slack.com/services/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'
     message {
         text = "Project is updated!"
