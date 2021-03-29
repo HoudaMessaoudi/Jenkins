@@ -19,24 +19,15 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        emailext(subject: 'Project Integration', body: 'The project has been integtated successfully!', from: 'hn_messaoudi@esi.dz', to: 'ha_rezgui@esi.dz')
-        withSonarQubeEnv('sonarqube') {
-          bat(script: 'gradle sonarqube', label: 'script')
-        }
-
+        emailext(subject: 'Project Integration', body: 'The project has been integtated successfully!', from: 'ha_rezgui@esi.dz', to: 'hn_messaoudi@esi.dz')
       }
     }
-
-    stage('Code Analysis') {
-          steps {
-            }
-        }
 
     stage('Test Reporting') {
-      steps {
-        cucumber '**/*.json'
-      }
-    }
+          steps {
+            cucumber '**/*.json'
+          }
+        }
 
     stage('Deployment') {
       steps {
@@ -49,6 +40,8 @@ pipeline {
         slackSend(channel: '#ogl', message: 'The project is updated!')
       }
     }
+
+
 
   }
 }
