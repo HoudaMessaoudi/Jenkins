@@ -15,7 +15,7 @@ repositories {
         mavenCentral()
 }
 
-/*dependencies {
+dependencies {
     testImplementation 'io.cucumber:cucumber-java:6.0.0'
     testImplementation 'io.cucumber:cucumber-junit:6.0.0'
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -27,7 +27,7 @@ cucumberReports {
     buildId = '0'
     reports = files('./reports/example-report.json')
 }
-test.finalizedBy ":sonarqube"*/
+test.finalizedBy ":sonarqube"
 
 task generateMatrixAPI(type:Copy){
     from './build'
