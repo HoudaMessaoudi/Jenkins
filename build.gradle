@@ -62,7 +62,6 @@ publishing {
     message {
         text = "Project is updated!"
         channel = '#ogl'
-
     }
 }
 publish.finalizedBy "publishToSlack"*/
