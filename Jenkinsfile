@@ -23,6 +23,12 @@ pipeline {
       }
     }
 
+    stage('Code Analysis') {
+          steps {
+            emailext(subject: 'Project Integration', body: 'The project has been integtated successfully!', from: 'hn_messaoudi@esi.dz', to: 'ha_rezgui@esi.dz')
+          }
+        }
+
     stage('Test Reporting') {
       steps {
         cucumber '**/*.json'
