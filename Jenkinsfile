@@ -20,17 +20,16 @@ pipeline {
     stage('Mail Notification') {
       steps {
         emailext(subject: 'Project Integration', body: 'The project has been integtated successfully!', from: 'hn_messaoudi@esi.dz', to: 'ha_rezgui@esi.dz')
-
+        withSonarQubeEnv('sonarqube') {
+          bat(script: 'gradle sonarqube', label: 'script')
+        }
 
       }
     }
 
     stage('Code Analysis') {
           steps {
-            withSonarQubeEnv('sonarqube') {
-                      bat(script: 'gradle sonarqube', label: 'script')
-                    }
-                }
+            }
         }
 
     stage('Test Reporting') {
