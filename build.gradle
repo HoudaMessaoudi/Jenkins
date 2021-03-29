@@ -21,12 +21,12 @@ dependencies {
 }
 
 
-/*cucumberReports {
+cucumberReports {
     outputDir = file('./reports')
     buildId = '0'
     reports = files('./reports/example-report.json')
 }
-//test.finalizedBy ":sonarqube"*/
+test.finalizedBy ":sonarqube"
 
 task generateMatrixAPI(type:Copy){
     from './build'
