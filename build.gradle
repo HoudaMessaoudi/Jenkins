@@ -64,7 +64,6 @@ publishing {
         channel = '#ogl'
 
     }
-
 }
 publish.finalizedBy "publishToSlack"*/
 
